@@ -1,0 +1,102 @@
+$red: #e30d18;
+
+.red-text {
+    color: $red;
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('./BebasNeue.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html body {
+    font-family: 'BebasNeue', sans-serif;
+    background-color: black;
+    max-width: 600px;
+    margin: auto;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+
+    .button-pablo {
+        width: 50%;
+        margin: 0;
+        font-size: 35px;
+        height: 83px;
+        border-radius: 0;
+        font-family: 'BebasNeue', serif;
+        border: none;
+
+        &:nth-child(3n) {
+            background: black;
+            color: white;
+        }
+
+        &:nth-child(3n+1) {
+            color: $red;
+            background: white;
+        }
+
+        &:nth-child(3n+2) {
+            background: $red;
+            color: black;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .about-us {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+    }
+
+    .pablo-face {
+        background: $red;
+        width: 50%;
+        border-radius: 0;
+        position: relative;
+        height: 200px;
+
+        img {
+            $padding: 17px;
+            top: $padding;
+            left: $padding;
+            position: absolute;
+            width: calc(100% - #{$padding*2});
+            height: calc(100% - #{$padding*2});
+        }
+    }
+}
+
+.about-page {
+    text-transform: uppercase;
+    color: white;
+    padding: 15px 50px;
+
+    h1 {
+        font-size: 42px;
+    }
+
+    p {
+        font-size: 33px;
+
+        &.bigger-text {
+            font-size: 38px;
+        }
+    }
+
+    a {
+        color: white;
+    }
+}
