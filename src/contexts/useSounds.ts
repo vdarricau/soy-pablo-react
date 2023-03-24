@@ -7,7 +7,7 @@ const useSound = (): Array<Sound> => {
     const audios = import.meta.glob("../assets/audio/list/*.mp3", { eager: true, as: 'url' });
 
     const sounds = Object.values(audios).map((audio) => {
-        const name = audio.split('/').slice(-1)[0].replace('.mp3', '').replaceAll('_', ' ');
+        const name = audio.split('/').slice(-1)[0].replace('.mp3', '').replaceAll('_', ' ').split('-').slice(0, 1)[0];
 
 
         return { name, path: audio };
